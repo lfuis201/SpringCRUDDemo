@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-patientsLuisfelipe
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: patientsdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  spring-app:
+    build: .
+    container_name: spring-crud-app
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql_data:
