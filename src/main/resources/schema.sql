@@ -1,0 +1,7 @@
+CREATE TABLE patient (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    document VARCHAR(50) NOT NULL,
+    age INT NOT NULL,
+    gender VARCHAR(10) NOT NULL
+);
